@@ -33,3 +33,7 @@ ext_plugin_dump_thread_dump_count=3
     
 * Deploy
     - 빌드 후 프로젝트 하위의 target 디렉토리에 scouter-plugin-server-dump-thread-0.0.1.jar 파일을 복사하여 스카우터 서버 설치 경로 하위의 lib/ 폴더에 저장한다.
+    
+* Requirements
+    - Scouter (Java) Agent 설치 디렉토리 하위에 dump 디렉토리가 생성되어 있어야 한다.
+    - 자바 프로세스의 ProcessCpu 정보를 확인하기 위해 Scouter Host Agent가 함께 구동되어야 한다.
