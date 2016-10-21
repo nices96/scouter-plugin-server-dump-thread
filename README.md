@@ -13,7 +13,6 @@
 
 * Example
 ```
-# External Interface (Email)
 ext_plugin_dump_thread_enable=true
 ext_plugin_dump_thread_debug=true
 ext_plugin_dump_thread_threshhold_cpu=80
