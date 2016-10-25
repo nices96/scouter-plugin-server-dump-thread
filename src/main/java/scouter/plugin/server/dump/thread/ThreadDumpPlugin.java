@@ -45,7 +45,7 @@ public class ThreadDumpPlugin {
 	        // objFamily가 javaee인 경우
 	        if (CounterConstants.FAMILY_JAVAEE.equals(objFamily)) {
 	        	if (pack.timetype == TimeTypeEnum.REALTIME && pack.data.getFloat(CounterConstants.PROC_CPU) > 0f) {
-	            	float maxCpu = new Float(conf.getValue("ext_plugin_dump_thread_threshhold_cpu", "80.0"));
+	            	float maxCpu = new Float(conf.getValue("ext_plugin_dump_thread_threshold_cpu", "80.0"));
 	
 	            	// CPU 임계치를 초과한 경우
 	            	if (pack.data.getFloat(CounterConstants.PROC_CPU) >= maxCpu) {
@@ -58,7 +58,7 @@ public class ThreadDumpPlugin {
 	            		if (currentTime - firstTime > (1000 * conf.getInt("ext_plugin_dump_thread_cpu_high_duration", 300))) {
 		            		// 5초 단위로 3회 스레드 덤프를 수행한다.
 		            		if (currentTime - lastTime > (1000 * conf.getInt("ext_plugin_dump_thread_dump_interval", 5)) && count < conf.getInt("ext_plugin_dump_thread_dump_count", 3)) {
-		                		println("[" + objName + "] Exceed the limit of cpu's threshhold(" + maxCpu + "). ThreadDump will be generated.");
+		                		println("[" + objName + "] Exceed the limit of cpu's threshold(" + maxCpu + "). ThreadDump will be generated.");
 		                    	ObjectPack objectPack = AgentManager.getAgent(objHash);
 		                    	MapPack mapPack = new MapPack();
 		                    	mapPack.put("objHash", objHash);
